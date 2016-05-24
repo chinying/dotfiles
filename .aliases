@@ -1,0 +1,40 @@
+alias lsa="ls -al"
+alias desktop="cd ~/Desktop"
+alias mvimo="open\"mvim://open?url=file://$1\""
+alias airportcycle='networksetup -setairportpower airport off; networksetup -setairportpower airport on'
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+alias javafuck='eval $(!!:gs/.class)'
+
+alias fuck='eval $(thefuck $(fc -ln -1))'
+# You can use whatever you want as an alias, like for Mondays:
+alias FUCK='fuck'
+
+alias npmlsa="npm list -g --depth=0"
+
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum="md5"
+
+# OS X has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null || alias sha1sum="shasum"
+
+alias adminmongoshell="mongo -u cy --authenticationDatabase admin -p"
+alias apachecycle="sudo apachectl restart"
+
+alias pngout='~/Desktop/stuff/dev/pngout/pngout'
+
+alias fweather='finger singapore@graph.no'
+alias tmux-kill-all="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+
+alias rm=trash
+alias reloadbash='. ~/.bash_profile'
+alias wiki='telnet telnet.wmflabs.org'
