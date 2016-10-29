@@ -11,21 +11,26 @@ set autoindent
 "left at SoL, right at EoL
 set whichwrap+=<,>,h,l,[,]
 
+set rtp+=/usr/local/opt/fzf
+
 filetype off
 "call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+"call pathogen#infect()
 filetype plugin on
 filetype plugin indent on
 set nocompatible "at your own risk
 
 set modelines=0
-execute pathogen#infect()
-colorscheme gruvbox 
+"execute pathogen#infect()
+" colorscheme gruvbox 
 set background=dark    " Setting dark mode
 
 autocmd BufNewFile,BufReadPost *.ino,*.pde,*.cpp set filetype=cpp
 autocmd BufNewFile,BufReadPost *.c set filetype=c
 autocmd BufNewFile,BufReadPost *.py set filetype=python
+
+inoremap jk <Esc> 
+inoremap kj <Esc> 
 
 "search + regex options
 nnoremap / /\v
