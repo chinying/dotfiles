@@ -83,6 +83,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+alias reloadzsh=". ~/.zshrc"
+
 export PATH="/usr/local/sbin:$PATH"
 # export PATH="/Applications/XAMPP/xamppfiles/bin:$PATH"
 
@@ -134,4 +136,19 @@ else
     start_agent;
 fi
 
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
 
+export PATH="/usr/local/bin:$PATH"
+
+# z
+. ~/.zcomp/z-master/z.sh
+
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
