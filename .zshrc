@@ -144,6 +144,9 @@ fi
 
 export PATH="/usr/local/bin:$PATH"
 
+# yarn config that allows for global packages to be added to path
+export PATH=$PATH:$(yarn global bin)
+
 # z
 . ~/.zcomp/z-master/z.sh
 
