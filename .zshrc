@@ -146,6 +146,7 @@ export PATH="/usr/local/bin:$PATH"
 
 # yarn config that allows for global packages to be added to path
 export PATH=$PATH:$(yarn global bin)
+export PATH=$PATH:~/.config/yarn/global/node_modules/.bin
 
 # z
 . ~/.zcomp/z-master/z.sh
@@ -155,3 +156,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# rust
+export PATH="$PATH:/Users/chinying/.cargo/bin"
