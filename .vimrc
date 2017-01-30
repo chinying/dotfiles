@@ -1,5 +1,9 @@
-set number
 syntax on
+
+" Set relative line numbers...
+set relativenumber
+" ...but absolute numbers on the current line
+set number
 
 "tab/indentation settings
 set smartindent
@@ -11,19 +15,28 @@ set autoindent
 "left at SoL, right at EoL
 set whichwrap+=<,>,h,l,[,]
 
-set rtp+=/usr/local/opt/fzf
+" haven't had time to configure this yet
+" set rtp+=/usr/local/opt/fzf
 
 filetype off
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#infect()
 filetype plugin on
 filetype plugin indent on
 set nocompatible "at your own risk
 
 set modelines=0
-"execute pathogen#infect()
-" colorscheme gruvbox 
-set background=dark    " Setting dark mode
+
+" vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" auto startup nerdtree
+" autocmd VimEnter * NERDTree
+map <C-k> :NERDTreeToggle<CR>
+call vundle#end()
 
 autocmd BufNewFile,BufReadPost *.ino,*.pde,*.cpp set filetype=cpp
 autocmd BufNewFile,BufReadPost *.c set filetype=c
@@ -58,7 +71,7 @@ set cursorline
 set ttyfast
 
 "word wrap options
-set wrap
-set textwidth=80
+"set wrap
+"set textwidth=80
 "set formatoptions=qrn1
-"set colorcolumn=85
+set colorcolumn=80
