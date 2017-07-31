@@ -46,6 +46,7 @@ alias subl='reattach-to-user-namespace subl'
 alias rvmruby='source /Users/chinying/.rvm/scripts/rvm'
 
 alias genvenv='python3 -m venv '
-alias psql='/Applications/Postgres.app/Contents/Versions/latest/bin/psql'
+# alias psql='/Applications/Postgres.app/Contents/Versions/latest/bin/psql'
+alias postgresup='postgres -D /usr/local/var/postgres'
 
 alias nocors='open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir'
