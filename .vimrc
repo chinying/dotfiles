@@ -15,6 +15,8 @@ set autoindent
 "left at SoL, right at EoL
 set whichwrap+=<,>,h,l,[,]
 
+set termguicolors
+
 " haven't had time to configure this yet
 " set rtp+=/usr/local/opt/fzf
 
@@ -32,15 +34,24 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'valloric/youcompleteme'
 
 " auto startup nerdtree
 " autocmd VimEnter * NERDTree
 map <C-k> :NERDTreeToggle<CR>
+
 call vundle#end()
 
+let macvim_skip_colorscheme=1
+colorscheme gruvbox
 autocmd BufNewFile,BufReadPost *.ino,*.pde,*.cpp set filetype=cpp
 autocmd BufNewFile,BufReadPost *.c set filetype=c
 autocmd BufNewFile,BufReadPost *.py set filetype=python
+
+autocmd Filetype markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 inoremap jk <Esc> 
 inoremap kj <Esc> 
