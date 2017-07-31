@@ -50,3 +50,5 @@ alias genvenv='python3 -m venv '
 alias postgresup='postgres -D /usr/local/var/postgres'
 
 alias nocors='open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir'
+
+alias pytest='python3 -m unittest'
