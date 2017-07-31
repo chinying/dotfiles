@@ -52,3 +52,4 @@ alias postgresup='postgres -D /usr/local/var/postgres'
 alias nocors='open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir'
 
 alias pytest='python3 -m unittest'
+alias pyserve='python3 -m http.server'
