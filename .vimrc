@@ -86,3 +86,10 @@ set ttyfast
 "set textwidth=80
 "set formatoptions=qrn1
 set colorcolumn=80
+
+" Code folding
+set foldmethod=indent
+set foldlevel=99
+
+" Fold with spacebar
+nnoremap <space> za
