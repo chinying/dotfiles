@@ -1,4 +1,4 @@
-alias lsa="ls -al"
+alias lsa="exa -al"
 alias lsnd="ls -p | grep -v /"
 alias desktop="cd ~/Desktop"
 alias mvimo="open\"mvim://open?url=file://$1\""
