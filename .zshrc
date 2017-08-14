@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/chinying/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -107,7 +107,7 @@ for file in ~/.{aliases,functions}; do
 done;
 unset file;
 
-SSH_ENV=/Users/chinying/.ssh/environment
+SSH_ENV=~/.ssh/environment
 
 # maven config
 export M3_HOME=$(brew --prefix maven)"/libexec"
@@ -148,15 +148,19 @@ export PATH=$PATH:$(yarn global bin)
 export PATH=$PATH:~/.config/yarn/global/node_modules/.bin
 
 # z
-. ~/.zcomp/z-master/z.sh
-
+# . ~/.zcomp/z-master/z.sh
+. /usr/local/etc/profile.d/z.sh
+if command -v brew >/dev/null 2>&1; then
+	# Load rupa's z if installed
+	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
+fi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # rust
-export PATH="$PATH:/Users/chinying/.cargo/bin"
+export PATH=$PATH:~/.cargo/bin
