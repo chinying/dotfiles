@@ -1,3 +1,4 @@
+set nocompatible " ignore vi compatabiity 
 syntax on
 
 " Set relative line numbers...
@@ -23,7 +24,6 @@ set termguicolors
 filetype off
 filetype plugin on
 filetype plugin indent on
-set nocompatible "at your own risk
 
 set modelines=0
 
