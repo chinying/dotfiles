@@ -10,7 +10,7 @@ set number
 set smartindent
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set expandtab " tabs to spaces
 set autoindent
 
 "left at SoL, right at EoL
