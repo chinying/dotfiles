@@ -21,6 +21,9 @@ set termguicolors
 " haven't had time to configure this yet
 " set rtp+=/usr/local/opt/fzf
 
+" when pasting stuff
+set pastetoggle=<F3>
+
 filetype off
 filetype plugin on
 filetype plugin indent on
@@ -37,12 +40,26 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
 Plugin 'valloric/youcompleteme'
 Plugin 'rking/ag.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'majutsushi/tagbar'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " auto startup nerdtree
 " autocmd VimEnter * NERDTree
 map <C-k> :NERDTreeToggle<CR>
+
+set tags=.tags;
+
+let mapleader = ','
+nnoremap <leader>a :Ag<space>
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 
 call vundle#end()
 
@@ -81,7 +98,7 @@ set backspace=indent,eol,start
 
 set showmode
 set showcmd
-"set hidden
+set hidden
 set wildmenu
 set wildmode=list:longest
 
