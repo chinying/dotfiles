@@ -18,6 +18,10 @@ set whichwrap+=<,>,h,l,[,]
 
 set termguicolors
 
+"remove left scrollbar
+set guioptions=r
+
+
 " haven't had time to configure this yet
 " set rtp+=/usr/local/opt/fzf
 
@@ -49,6 +53,10 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'majutsushi/tagbar'
 Plugin 'ctrlpvim/ctrlp.vim'
 
+call vundle#end()
+
+set background=dark
+
 " auto startup nerdtree
 " autocmd VimEnter * NERDTree
 map <C-k> :NERDTreeToggle<CR>
@@ -60,8 +68,6 @@ nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
-
-call vundle#end()
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
