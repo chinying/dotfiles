@@ -69,15 +69,13 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
-plugins=(git)
+# enable fish-like suggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
 export PATH="/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
-source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
