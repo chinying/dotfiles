@@ -1,5 +1,6 @@
 set nocompatible " ignore vi compatabiity 
 syntax on
+set mouse=a
 
 " Set relative line numbers...
 set relativenumber
