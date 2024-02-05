@@ -3,6 +3,21 @@ set -q XDG_DATA_HOME
   and set -gx OMF_PATH "$XDG_DATA_HOME/omf"
   or set -gx OMF_PATH "$HOME/.local/share/omf"
 
+# Load Oh My Fish configuration.
+source $OMF_PATH/init.fish
+
+
+# Load pyenv automatically by adding
+# the following to ~/.config/fish/config.fish:
+
+status is-login; and pyenv init --path | source
+status is-interactive; and pyenv init - | source
+# status --is-interactive; and . (pyenv init -|psub)
+
+fish_add_path /Users/chinying/Library/Application Support/Coursier/bin
+
+# aliases
+#
 alias lsa="exa -alh"
 alias lsaa="tree"
 alias lsnd="ls -p | grep -v /"
@@ -10,6 +25,8 @@ alias desktop="cd ~/Desktop"
 alias mvimo="open\"mvim://open?url=file://$1\""
 alias airportcycle='networksetup -setairportpower airport off; networksetup -setairportpower airport on'
 # alias mkcd="mkdir "
+alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
+
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -18,7 +35,7 @@ alias .....="cd ../../../.."
 
 # alias fuck='eval $(thefuck $(fc -ln -1))'
 # You can use whatever you want as an alias, like for Mondays:
-# alias FUCK='fuck'
+#  alias FUCK='fuck'
 
 alias npmlsa="npm list -g --depth=0"
 
@@ -60,5 +77,26 @@ alias nocors='open -a Google\ Chrome\ Canary --args --disable-web-security --use
 alias pyutest='python3 -m unittest'
 alias pyserve='python3 -m http.server'
 
-# Load Oh My Fish configuration.
-source $OMF_PATH/init.fish
+# show time
+set -q color_right_time; or set color_right_time red
+set -q color_right_time_indicator; or set color_right_time_indicator yellow
+set left_segment_separator \uE0B2
+
+function prompt_time -d 'prints the current time'
+  set_color $color_right_time
+  echo "$left_segment_separator"
+  set_color -b $color_right_time $color_right_time_indicator
+  date "+%H:%M:%S"
+  set_color -b $color_right_time normal
+  echo "$left_segment_separator"
+end
+
+function fish_right_prompt -d 'Prints right prompt'
+  prompt_time
+  set_color normal
+end
+
+function fish_right_prompt -d 'Prints right prompt'
+  prompt_time
+  set_color normal
+end
