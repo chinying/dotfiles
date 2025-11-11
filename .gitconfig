@@ -1,17 +1,21 @@
 [core]
   excludesfile = ~/.gitignore_global
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 [user]
   name = Seah Chin Ying
   email = scy.6char@gmail.com
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lge = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --name-only
@@ -38,7 +42,13 @@
   enabled = true
 [commit]
   template = ~/.stCommitMsg
-[fetch]
-  prune=true
 [pull]
-  ff = only
+  rebase=true
+[push]
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
